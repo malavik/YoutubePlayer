@@ -14,8 +14,8 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
     private static final String TAG = "YoutubeActivity";
     static final String GOOGLE_API_KEY = "AIzaSyBiWLHbYYsQqLzwe89tNHXpF-4ZnW2ozrM";
-    static final String YOUTUBE_VIDEO_ID = "su9J9HkvcF0&t=0s";
-    static final String YOUTUBE_PLAYLIST_ID = "PLMGeYjz2ThRG9Ox8oOYhTAVT64FcazHUd";
+    static final String YOUTUBE_VIDEO_ID = "su9J9HkvcF0";
+    static final String YOUTUBE_PLAYLIST_ID = "PL3BsbIOyk8lrzmMvTRvyyFSyMpcSoaJOL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +57,17 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
         public void onPlaying() {
-            Toast.makeText(YoutubeActivity.this, "Good, video is playing ok", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playbackEventListener : Video is playing", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onPaused() {
-            Toast.makeText(YoutubeActivity.this, "Video has paused", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playbackEventListener : Video has paused", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onStopped() {
-            Toast.makeText(YoutubeActivity.this, "Video has stopped", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playbackEventListener : Video has stopped", Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -94,17 +94,17 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
 
         @Override
         public void onAdStarted() {
-            Toast.makeText(YoutubeActivity.this, "Click Ad now, make the video creator rich!", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playerStateChangeListener : Ugh! Another Ad!", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onVideoStarted() {
-            Toast.makeText(YoutubeActivity.this, "Video has started", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playerStateChangeListener : Video has started", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onVideoEnded() {
-            Toast.makeText(YoutubeActivity.this, "Congratulations! You've completed another video.", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "playerStateChangeListener : Congratulations! Video ended.", Toast.LENGTH_LONG).show();
         }
 
         @Override
