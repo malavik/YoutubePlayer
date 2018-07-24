@@ -34,6 +34,9 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         Log.d(TAG,"onInitializationSuccess: provider is :" + provider.getClass().toString());
         Toast.makeText(this, "Youtube Player Initialization Success!", Toast.LENGTH_LONG).show();
 
+        youTubePlayer.setPlaybackEventListener(playbackEventListener);
+        youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
+
         if (!wasRestored){
             youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
         }
@@ -54,7 +57,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
         public void onPlaying() {
-            Toast.makeText(YoutubeActivity.this, "video is playing", Toast.LENGTH_LONG).show();
+            Toast.makeText(YoutubeActivity.this, "Good, video is playing ok", Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -64,7 +67,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
 
         @Override
         public void onStopped() {
-
+            Toast.makeText(YoutubeActivity.this, "Video has stopped", Toast.LENGTH_LONG).show();
         }
 
         @Override
